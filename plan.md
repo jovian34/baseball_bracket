@@ -13,7 +13,7 @@ Conferences
 - Teams (many to one)
 
 Alternate-Names
--alternate names (many to one - teams)
+- alternate names (many to one - teams)
 
 2019_Performance
 - Team (one to one)
