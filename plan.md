@@ -5,29 +5,38 @@
 ### Tables
 
 Teams
-- Alternate_names (one to many)
-- Address
-- Conference (one to one)
+- primary_key
+- alt_names (relation one to many)
+- address
+- city
+- state
+- zip
+- conference (relation many to one)
 
 Conferences
-- Teams (many to one)
+- primary_key
+- team (relation one to many)
 
-Alternate-Names
-- alternate names (many to one - teams)
+AlternateNames
+- primary_key
+- team (relation many to one)
+- alternate_name
 
-2019_Performance
-- Team (one to one)
-- Wins
-- Losses
-- Ties
+2019Performance
+- primary_key
+- team (relation)
+- wins
+- losses
+- ties
 - conf_wins
 - conf_losses
 - conf_ties
-- RPI
-- SOS
-- Non-con SOS
-- ISR
+- rpi_value
+- sos_rank
+- non_con_sos_rank
+- isr_rank
 
-2018_Regionals
-- team
+2018Regionals
+- primary_key
+- team (relation)
 - host 
