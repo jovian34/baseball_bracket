@@ -1,10 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
-
-
-def request_auto_bid_data(r):
-    r_text = r.text
-    return BeautifulSoup(r_text, 'html.parser')
+from data_collect.req_soup_base import ReqSoup
 
 
 def break_into_sub_lists(td_text):
@@ -32,13 +26,11 @@ def create_conference_dict(td_list_conf):
 
 
 def main():
-    r = requests.get('http://warrennolan.com/baseball/2018/autobids')
-    soup = request_auto_bid_data(r)
+    req = ReqSoup.make_request('http://warrennolan.com/baseball/2018/autobids')
+    soup = ReqSoup.text_from_request(req)
     td_text = [td.text.strip() for td in soup.find_all('td') if td.text]
     td_list_conf = break_into_sub_lists(td_text)
-    conf_dict = create_conference_dict(td_list_conf)
-
-    return conf_dict
+    return create_conference_dict(td_list_conf)
 
 
 if __name__ == "__main__":

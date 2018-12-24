@@ -1,10 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
-
-
-def request_rpi_data(r):
-    r_text = r.text
-    return BeautifulSoup(r_text, 'html.parser')
+from data_collect.req_soup_base import ReqSoup
 
 
 def remove_rpi_group(td_text:list)-> list:
@@ -99,8 +93,8 @@ def create_nolan_dict(td_team_lists):
 
 
 def main():
-    r = requests.get('http://warrennolan.com/baseball/2018/rpi-live2')
-    soup = request_rpi_data(r)
+    req = ReqSoup.make_request('http://warrennolan.com/baseball/2018/rpi-live2')
+    soup = ReqSoup.text_from_request(req)
     td_text = [td.text.strip() for td in soup.find_all('td') if td.text]
     td_text_limited = remove_rpi_group(td_text)
     td_team_lists = break_into_sub_lists(td_text_limited)
