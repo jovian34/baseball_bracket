@@ -1,5 +1,6 @@
 from calculations.rpi_adjustment import RpiAdjustment
 import operator
+from pathlib import Path
 
 class TourneyRank:
 
@@ -47,5 +48,7 @@ class TourneyRank:
         self.field_of_64.sort(key=operator.itemgetter(1), reverse=True)
 
     def print_field(self):
-        for rank, team in enumerate(self.field_of_64):
-            print(f"{rank+1}. {team[0]}")
+        path = Path("2018_ranks.txt")
+        with open(path, mode='wt') as f:
+            for rank, team in enumerate(self.field_of_64):
+                f.writelines(f"{rank+1}. {team[0]}\n")
