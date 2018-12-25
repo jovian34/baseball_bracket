@@ -1,5 +1,6 @@
 from data_collect.get_current_rpi_wn import NolanRpiExpand
 from data_collect.get_auto_bids_wn import NolanAutoBid
+from data_collect.get_current_isr_bw import BoydsIsr
 
 
 class ConferenceRank:
@@ -18,6 +19,7 @@ class ConferenceRank:
     def get_data(self):
         nolan = NolanRpiExpand()
         nolan_auto = NolanAutoBid()
+        boyds_isr = BoydsIsr
         self.conf_dict = nolan_auto.auto_bid_dict
         self.team_dict = nolan.nolan_dict
 

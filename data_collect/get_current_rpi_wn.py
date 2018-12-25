@@ -82,6 +82,13 @@ class NolanRpiExpand:
             nc_rpi_rank = int(team_list[9])
             nc_sos_rank = int(team_list[10])
 
+            group1_record = team_list[14].split('-')
+            group1_wins = int(group1_record[0])
+            group1_lossess = int(group1_record[1])
+            group2_record = team_list[15].split('-')
+            group2_wins = int(group2_record[0])
+            group2_losses = int(group2_record[1])
+
             self.nolan_dict[team_name] = {
                 'rpi_rank': rpi_rank,
                 'conference': conference,
@@ -103,6 +110,10 @@ class NolanRpiExpand:
                 'nc_ties': nc_ties,
                 'nc_rpi_rank': nc_rpi_rank,
                 'nc_sos_rank': nc_sos_rank,
+                'group1_wins': group1_wins,
+                'group1_losses': group1_lossess,
+                'group2_wins': group2_wins,
+                'group2_losses': group2_losses,
             }
 
 
