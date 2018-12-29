@@ -1,12 +1,11 @@
-from baseball_bracket.calculations.rpi_adjustment import RpiAdjustment
 import operator
 from pathlib import Path
 
+
 class TourneyRank:
 
-    def __init__(self):
-        self.team_dict = {}
-        self.get_data()
+    def __init__(self, team_dict):
+        self.team_dict = team_dict
         self.team_ranks = []
         self.create_sortable_list()
         self.sort_list()
@@ -15,13 +14,9 @@ class TourneyRank:
         self.remove_non_qualifiers()
         self.calculate_bumps()
         self.field_of_64 = []
+        self.last_four_in = []
         self.calc_field_of_64()
-        self.print_field()
 
-
-    def get_data(self):
-        teams = RpiAdjustment()
-        self.team_dict = teams.team_dict
 
     def create_sortable_list(self):
         for key, value in self.team_dict.items():
@@ -45,10 +40,17 @@ class TourneyRank:
     def calc_field_of_64(self):
         self.qualifiers.sort(key=operator.itemgetter(2, 1), reverse=True)
         self.field_of_64 = self.qualifiers[:64]
+        self.last_four_in = self.field_of_64[-4:]
+        self.last_four_in.reverse()
         self.field_of_64.sort(key=operator.itemgetter(1), reverse=True)
 
     def print_field(self):
-        path = Path("2018_ranks.txt")
+        path = Path("2018_ranks_v3.txt")
         with open(path, mode='wt') as f:
+            f.writelines("Last Four in:\n")
+            for rank, team in enumerate(self.last_four_in):
+                f.writelines(f"{rank+1}. {team[0]}\n")
+            f.writelines("\n\n")
+            f.writelines("Ranked Field of 64:\n")
             for rank, team in enumerate(self.field_of_64):
                 f.writelines(f"{rank+1}. {team[0]}\n")

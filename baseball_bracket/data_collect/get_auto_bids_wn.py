@@ -3,15 +3,13 @@ from baseball_bracket.data_collect.req_soup_base import ReqSoup
 
 class NolanAutoBid:
 
-
     def __init__(self):
         self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2018/autobids')
         self.soup = ReqSoup.text_from_request(self.req)
         self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
         self.break_into_sub_lists()
         self.auto_bid_dict = {}
-        self.create_conference_dict()
-
+        self.create_auto_bid_dict()
 
     def break_into_sub_lists(self):
         '''
@@ -28,9 +26,11 @@ class NolanAutoBid:
         for x in range(0, len(self.td_text), 4):
             self.td_list_conf.append(self.td_text[x:x + 4])
 
-
-    def create_conference_dict(self):
+    def create_auto_bid_dict(self):
         for conf_list in self.td_list_conf:
             conf = conf_list[1].strip()
             team = conf_list[3].strip().upper()
             self.auto_bid_dict[conf] = team
+
+    def return_auto_bid_dict(self):
+        return self.auto_bid_dict

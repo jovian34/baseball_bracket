@@ -41,7 +41,6 @@ class NolanRpiExpand:
         self.td_team_lists = [self.td_text_limited[x:x + 18]
                               for x in range(0, len(self.td_text_limited), 18)]
 
-
     def create_nolan_dict(self):
         self.nolan_dict = {}
         for team_list in self.td_team_lists:
@@ -99,6 +98,7 @@ class NolanRpiExpand:
                 'conf_win_pct': 0.0,
                 'conf_champs': False,
                 'auto_bid': False,
+                'conf_rpi_lead': False,
                 'total_wins': total_wins,
                 'total_losses': total_losses,
                 'total_ties': total_ties,
