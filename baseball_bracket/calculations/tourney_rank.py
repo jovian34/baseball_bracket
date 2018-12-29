@@ -15,6 +15,7 @@ class TourneyRank:
         self.calculate_bumps()
         self.field_of_64 = []
         self.last_four_in = []
+        self.first_four_out = []
         self.calc_field_of_64()
 
 
@@ -40,17 +41,24 @@ class TourneyRank:
     def calc_field_of_64(self):
         self.qualifiers.sort(key=operator.itemgetter(2, 1), reverse=True)
         self.field_of_64 = self.qualifiers[:64]
-        self.last_four_in = self.field_of_64[-4:]
+        self.last_four_in = self.qualifiers[60:64]
+        self.first_four_out = self.qualifiers[64:68]
         self.last_four_in.reverse()
         self.field_of_64.sort(key=operator.itemgetter(1), reverse=True)
 
     def print_field(self):
-        path = Path("2018_ranks_v3.txt")
+        path = Path("2018_ranks_v4.txt")
         with open(path, mode='wt') as f:
             f.writelines("Last Four in:\n")
             for rank, team in enumerate(self.last_four_in):
                 f.writelines(f"{rank+1}. {team[0]}\n")
             f.writelines("\n\n")
+
+            f.writelines("First Four out:\n")
+            for rank, team in enumerate(self.first_four_out):
+                f.writelines(f"{rank + 1}. {team[0]}\n")
+            f.writelines("\n\n")
+
             f.writelines("Ranked Field of 64:\n")
             for rank, team in enumerate(self.field_of_64):
                 f.writelines(f"{rank+1}. {team[0]}\n")
