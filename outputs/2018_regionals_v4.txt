@@ -1,0 +1,113 @@
+Regionals:
+Region: 1
+Host: (1, 'FLORIDA', 'SEC')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 2
+Host: (2, 'STANFORD', 'Pac-12')
+2-seed: (20, "SAINT JOHN'S", 'Big East')
+3-seed: (45, 'OHIO STATE', 'Big Ten')
+4-seed: (49, 'ARMY', 'Patriot League')
+
+
+Region: 3
+Host: (3, 'ARKANSAS', 'SEC')
+2-seed: (22, 'CAL STATE FULLERTON', 'Big West')
+3-seed: (47, 'SAN DIEGO STATE', 'Mountain West')
+4-seed: None
+
+
+Region: 4
+Host: (4, 'NORTH CAROLINA', 'ACC')
+2-seed: None
+3-seed: None
+4-seed: (50, 'GONZAGA', 'West Coast')
+
+
+Region: 5
+Host: (5, 'OREGON STATE', 'Pac-12')
+2-seed: (30, 'MISSISSIPPI STATE', 'SEC')
+3-seed: (44, 'OKLAHOMA', 'Big 12')
+4-seed: (51, 'UNCW', 'Colonial Athletic')
+
+
+Region: 6
+Host: (6, 'STETSON', 'Atlantic Sun')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 7
+Host: (7, 'MINNESOTA', 'Big Ten')
+2-seed: (23, 'NORTHEASTERN', 'Colonial Athletic')
+3-seed: (40, 'WASHINGTON', 'Pac-12')
+4-seed: (58, 'MOREHEAD STATE', 'Ohio Valley')
+
+
+Region: 8
+Host: (8, 'OLE MISS', 'SEC')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 9
+Host: (9, 'TEXAS TECH', 'Big 12')
+2-seed: (26, 'SOUTHERN MISS', 'Conference USA')
+3-seed: (48, 'WRIGHT STATE', 'Horizon League')
+4-seed: None
+
+
+Region: 10
+Host: (10, 'CLEMSON', 'ACC')
+2-seed: (25, 'HOUSTON', 'American Athletic')
+3-seed: (46, 'LSU', 'SEC')
+4-seed: (54, 'NEW MEXICO STATE', 'Western Athletic')
+
+
+Region: 11
+Host: (11, 'TEXAS', 'Big 12')
+2-seed: (27, 'SOUTH CAROLINA', 'SEC')
+3-seed: None
+4-seed: None
+
+
+Region: 12
+Host: (12, 'TENNESSEE TECH', 'Ohio Valley')
+2-seed: None
+3-seed: (42, 'DALLAS BAPTIST', 'Missouri Valley')
+4-seed: None
+
+
+Region: 13
+Host: (13, 'GEORGIA', 'SEC')
+2-seed: (18, 'MISSOURI STATE', 'Missouri Valley')
+3-seed: None
+4-seed: None
+
+
+Region: 14
+Host: (14, 'FLORIDA STATE', 'ACC')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 15
+Host: (15, 'UCLA', 'Pac-12')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 16
+Host: (16, 'COASTAL CAROLINA', 'Sun Belt')
+2-seed: None
+3-seed: None
+4-seed: None
+
+

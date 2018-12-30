@@ -8,79 +8,102 @@ class Regionals:
         self.field = field
         self.isr_data = isr_data
         self.team_dict = team_dict
-        self.hosts = self.field[:16]
-        print(self.hosts)
-        self.non_hosts = [self.field[16:32],
-                          self.field[32:48],
-                          self.field[48:]]
-        print(self.non_hosts)
-        self.reverse_even_seeds()
-        self.regions = {index+1: {'host': host,
-                                  2: None,
-                                  3: None,
-                                  4: None,
-                                  'totals': host[0]}
-                        for index, host in enumerate(self.hosts)}
-        self.assign_by_same_state()
-        self.assign_by_surrounding_state()
-        self.assign_remaining()
+        self.regional_dict = {}
+        self.create_regional_dict()
+        print(self.regional_dict)
+        self.matchups = [1, 16, 8, 9, 2, 15, 7, 10, 3, 14, 6, 11, 4, 13, 5, 12]
+        self.set_seeds_by_in_state_match(63, 48, -1)  # 4-seeds
+        self.set_seeds_by_in_state_match(32, 48)  # 3-seeds
+        self.set_seeds_by_in_state_match(31, 16, -1)  # 2-seeds
+        self.set_seeds_by_surrounding_state_match(63, 48, -1)  # 4-seeds
+        self.set_seeds_by_surrounding_state_match(32, 48)  # 3-seeds
+        self.set_seeds_by_surrounding_state_match(31, 16, -1)  # 2-seeds
 
-    def reverse_even_seeds(self):
-        self.non_hosts[0].reverse()
-        self.non_hosts[2].reverse()
+    @staticmethod
+    def calculate_seed(rank):
+        if rank < 16:
+            return 1
+        elif rank < 32:
+            return 2
+        elif rank < 48:
+            return 3
+        else:
+            return 4
 
-    def assign_by_same_state(self):
-        for region, teams in self.regions.items():
-            host_state = self.isr_data[teams['host']]['state']
-            host_conf = self.team_dict[teams['host']]['conference']
-            for seed in (2, 3, 4):
-                for team in self.non_hosts[seed - 2]:
-                    non_host_conf = self.team_dict[team]['conference']
-                    non_host_state = self.isr_data[team]['state']
-                    if non_host_state == host_state and host_conf != non_host_conf:
-                        self.regions[region][seed] = team
-                        self.non_hosts[seed-2].remove(team)
+    @staticmethod
+    def is_a_host(rank, team):
+        if rank < 16:
+            return team
+        else:
+            return None
 
-    def assign_by_surrounding_state(self):
-        for region, teams in self.regions.items():
-            host_state = self.isr_data[teams['host']]['state']
-            host_conf = self.team_dict[teams['host']]['conference']
-            surrounding_states = surrounding_map[host_state]
-            for seed in (2, 3, 4):
-                if not self.regions[region][seed]:
-                    for team in self.non_hosts[seed - 2]:
-                        non_host_state = self.isr_data[team]['state']
-                        non_host_conf = self.team_dict[team]['conference']
-                        if non_host_state in surrounding_states and host_conf != non_host_conf:
-                            self.regions[region][seed] = team
-                            self.non_hosts[seed - 2].remove(team)
+    def host_already_set(self, team_rank):
+        if self.regional_dict[team_rank]['host']:
+            return True
+        else:
+            return False
 
-    def assign_remaining(self):
-        for region, teams in self.regions.items():
-            host_conf = self.team_dict[teams['host']]['conference']
-            for seed in (2, 3, 4):
-                print(f"Remaining {seed}-seeds:")
-                for team in self.non_hosts[seed - 2]:
-                    print(team)
-                if not self.regions[region][seed]:
-                    for team in self.non_hosts[seed - 2]:
-                        non_host_conf = self.team_dict[team]['conference']
-                        if host_conf != non_host_conf:
-                            self.regions[region][seed] = team
-                            self.non_hosts[seed - 2].remove(team)
+    def create_regional_dict(self):
+        for rank, team in enumerate(self.field):
+            self.regional_dict[rank + 1] = {
+                'team': team,
+                'rank': rank + 1,
+                'seed': self.calculate_seed(rank),
+                'host': self.is_a_host(rank, team),
+                'state': self.isr_data[team]['state'],
+                'conference': self.team_dict[team]['conference']
+            }
+
+    def set_seeds_by_in_state_match(self, *seed_range):
+        for team_rank in range(*seed_range):
+            team_conf = self.regional_dict[team_rank]['conference']
+            team_state = self.regional_dict[team_rank]['state']
+            for host_rank in range(1, 17):
+                host_conf = self.regional_dict[host_rank]['conference']
+                host_state = self.regional_dict[host_rank]['state']
+                if host_conf != team_conf and host_state == team_state:
+                    self.regional_dict[team_rank]['host'] = \
+                        self.regional_dict[host_rank]['team']
+                    break
+
+    def set_seeds_by_surrounding_state_match(self, *seed_range):
+        for team_rank in range(*seed_range):
+            if self.host_already_set(team_rank):
+                continue
+            team_conf = self.regional_dict[team_rank]['conference']
+            team_state = self.regional_dict[team_rank]['state']
+            surr_states = surrounding_map[team_state]
+            for host_rank in range(1, 17):
+                host_conf = self.regional_dict[host_rank]['conference']
+                host_state = self.regional_dict[host_rank]['state']
+                if host_conf != team_conf and host_state in surr_states:
+                    self.regional_dict[team_rank]['host'] = \
+                        self.regional_dict[host_rank]['team']
+                    break
 
     def print_field(self):
-        path = Path("2018_regionals_v6.txt")
+        path = Path("2018_regional_dict_v1.txt")
         with open(path, mode='wt') as f:
-            f.writelines("Regionals:\n")
-            for region, teams in self.regions.items():
-                f.writelines(f'Region: {region}\n')
-                f.writelines(f"Host: {teams['host']} of the "
-                             f"{self.team_dict[teams['host']]['conference']}\n")
-                f.writelines(f"2-seed: {teams[2]} \n")
-                f.writelines(f"3-seed: {teams[3]} \n")
-                f.writelines(f"4-seed: {teams[4]} \n")
+            f.writelines("Regionals:\n\n")
+            for index in self.matchups:
+                host = self.regional_dict[index]['team']
+                f.writelines(f'Region: {index}\n')
+                f.writelines(f"Host: {host} of the "
+                             f"{self.team_dict[host]['conference']}\n")
+                for two_seed_rank in range(17, 33):
+                    two_seed = self.regional_dict[two_seed_rank]
+                    if two_seed['host'] == host:
+                        f.writelines(f"2-seed: {two_seed['team']} of the "
+                                     f"{two_seed['conference']}\n")
+                for three_seed_rank in range(33, 49):
+                    three_seed = self.regional_dict[three_seed_rank]
+                    if three_seed['host'] == host:
+                        f.writelines(f"3-seed: {three_seed['team']} of the "
+                                     f"{three_seed['conference']}\n")
+                for four_seed_rank in range(49, 65):
+                    four_seed = self.regional_dict[four_seed_rank]
+                    if four_seed['host'] == host:
+                        f.writelines(f"4-seed: {four_seed['team']} of the "
+                                     f"{four_seed['conference']}\n")
                 f.writelines('\n\n')
-            f.writelines('\n==============================\n')
-            for team in self.non_hosts:
-                f.writelines(f"Still needing to be placed: {team}\n")
+                f.writelines('\n==============================\n')

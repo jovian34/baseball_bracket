@@ -1,0 +1,113 @@
+Regionals:
+Region: 1
+Host: FLORIDA of the SEC
+2-seed: NORTHEASTERN 
+3-seed: JACKSONVILLE 
+4-seed: SAMFORD 
+
+
+Region: 2
+Host: STANFORD of the Pac-12
+2-seed: CAL STATE FULLERTON 
+3-seed: SAN DIEGO STATE 
+4-seed: None 
+
+
+Region: 3
+Host: ARKANSAS of the SEC
+2-seed: MISSOURI STATE 
+3-seed: OKLAHOMA 
+4-seed: SAINT LOUIS 
+
+
+Region: 4
+Host: NORTH CAROLINA of the ACC
+2-seed: EAST CAROLINA 
+3-seed: None 
+4-seed: UNCW 
+
+
+Region: 5
+Host: OREGON STATE of the Pac-12
+2-seed: None 
+3-seed: None 
+4-seed: GONZAGA 
+
+
+Region: 6
+Host: STETSON of the Atlantic Sun
+2-seed: AUBURN 
+3-seed: FAU 
+4-seed: None 
+
+
+Region: 7
+Host: MINNESOTA of the Big Ten
+2-seed: None 
+3-seed: None 
+4-seed: None 
+
+
+Region: 8
+Host: OLE MISS of the SEC
+2-seed: SOUTHERN MISS 
+3-seed: None 
+4-seed: None 
+
+
+Region: 9
+Host: TEXAS TECH of the Big 12
+2-seed: HOUSTON 
+3-seed: SAM HOUSTON STATE 
+4-seed: TEXAS SOUTHERN 
+
+
+Region: 10
+Host: CLEMSON of the ACC
+2-seed: SOUTH CAROLINA 
+3-seed: None 
+4-seed: None 
+
+
+Region: 11
+Host: TEXAS of the Big 12
+2-seed: None 
+3-seed: DALLAS BAPTIST 
+4-seed: NEW MEXICO STATE 
+
+
+Region: 12
+Host: TENNESSEE TECH of the Ohio Valley
+2-seed: VANDERBILT 
+3-seed: None 
+4-seed: None 
+
+
+Region: 13
+Host: GEORGIA of the SEC
+2-seed: DUKE 
+3-seed: None 
+4-seed: None 
+
+
+Region: 14
+Host: FLORIDA STATE of the ACC
+2-seed: None 
+3-seed: None 
+4-seed: None 
+
+
+Region: 15
+Host: UCLA of the Pac-12
+2-seed: None 
+3-seed: None 
+4-seed: None 
+
+
+Region: 16
+Host: COASTAL CAROLINA of the Sun Belt
+2-seed: None 
+3-seed: None 
+4-seed: None 
+
+

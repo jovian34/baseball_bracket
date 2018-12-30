@@ -1,0 +1,113 @@
+Regionals:
+Region: 1
+Host: (1, 'FLORIDA')
+2-seed: None
+3-seed: (35, 'JACKSONVILLE')
+4-seed: None
+
+
+Region: 2
+Host: (2, 'STANFORD')
+2-seed: (22, 'CAL STATE FULLERTON')
+3-seed: (47, 'SAN DIEGO STATE')
+4-seed: None
+
+
+Region: 3
+Host: (3, 'ARKANSAS')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 4
+Host: (4, 'NORTH CAROLINA')
+2-seed: (19, 'EAST CAROLINA')
+3-seed: None
+4-seed: (51, 'UNCW')
+
+
+Region: 5
+Host: (5, 'OREGON STATE')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 6
+Host: (6, 'STETSON')
+2-seed: None
+3-seed: (36, 'FAU')
+4-seed: None
+
+
+Region: 7
+Host: (7, 'MINNESOTA')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 8
+Host: (8, 'OLE MISS')
+2-seed: (26, 'SOUTHERN MISS')
+3-seed: None
+4-seed: None
+
+
+Region: 9
+Host: (9, 'TEXAS TECH')
+2-seed: (25, 'HOUSTON')
+3-seed: (41, 'SAM HOUSTON STATE')
+4-seed: (63, 'TEXAS SOUTHERN')
+
+
+Region: 10
+Host: (10, 'CLEMSON')
+2-seed: (27, 'SOUTH CAROLINA')
+3-seed: None
+4-seed: None
+
+
+Region: 11
+Host: (11, 'TEXAS')
+2-seed: None
+3-seed: (42, 'DALLAS BAPTIST')
+4-seed: None
+
+
+Region: 12
+Host: (12, 'TENNESSEE TECH')
+2-seed: (28, 'VANDERBILT')
+3-seed: None
+4-seed: None
+
+
+Region: 13
+Host: (13, 'GEORGIA')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 14
+Host: (14, 'FLORIDA STATE')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 15
+Host: (15, 'UCLA')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
+Region: 16
+Host: (16, 'COASTAL CAROLINA')
+2-seed: None
+3-seed: None
+4-seed: None
+
+
