@@ -10,14 +10,16 @@ class Regionals:
         self.team_dict = team_dict
         self.regional_dict = {}
         self.create_regional_dict()
-        print(self.regional_dict)
         self.matchups = [1, 16, 8, 9, 2, 15, 7, 10, 3, 14, 6, 11, 4, 13, 5, 12]
-        self.set_seeds_by_in_state_match(63, 48, -1)  # 4-seeds
-        self.set_seeds_by_in_state_match(32, 48)  # 3-seeds
-        self.set_seeds_by_in_state_match(31, 16, -1)  # 2-seeds
-        self.set_seeds_by_surrounding_state_match(63, 48, -1)  # 4-seeds
-        self.set_seeds_by_surrounding_state_match(32, 48)  # 3-seeds
-        self.set_seeds_by_surrounding_state_match(31, 16, -1)  # 2-seeds
+        self.set_seeds_by_in_state_match(64, 48, -1)  # 4-seeds
+        self.set_seeds_by_in_state_match(33, 49)  # 3-seeds
+        self.set_seeds_by_in_state_match(32, 16, -1)  # 2-seeds
+        self.set_seeds_by_surrounding_state_match(64, 48, -1)  # 4-seeds
+        self.set_seeds_by_surrounding_state_match(33, 49)  # 3-seeds
+        self.set_seeds_by_surrounding_state_match(32, 16, -1)  # 2-seeds
+        self.fill_remaining(64, 48, -1)  # 4-seeds
+        self.fill_remaining(33, 49)  # 3-seeds
+        self.fill_remaining(32, 16, -1)  # 2-seeds
 
     @staticmethod
     def calculate_seed(rank):
@@ -37,11 +39,18 @@ class Regionals:
         else:
             return None
 
-    def host_already_set(self, team_rank):
+    def team_already_assigned_host(self, team_rank):
         if self.regional_dict[team_rank]['host']:
             return True
         else:
             return False
+
+    def host_already_assigned_team(self, host_rank, seed_range):
+        host = self.regional_dict[host_rank]['team']
+        for i in range(*seed_range):
+            if self.regional_dict[i]['host'] == host:
+                return True
+        return False
 
     def create_regional_dict(self):
         for rank, team in enumerate(self.field):
@@ -55,34 +64,53 @@ class Regionals:
             }
 
     def set_seeds_by_in_state_match(self, *seed_range):
-        for team_rank in range(*seed_range):
-            team_conf = self.regional_dict[team_rank]['conference']
-            team_state = self.regional_dict[team_rank]['state']
-            for host_rank in range(1, 17):
-                host_conf = self.regional_dict[host_rank]['conference']
-                host_state = self.regional_dict[host_rank]['state']
+        for host_rank in range(1, 17):
+            host_conf = self.regional_dict[host_rank]['conference']
+            host_state = self.regional_dict[host_rank]['state']
+            for team_rank in range(*seed_range):
+                print(f"{team_rank} for {seed_range}")
+                if self.host_already_assigned_team(host_rank, seed_range):
+                    break
+                team_conf = self.regional_dict[team_rank]['conference']
+                team_state = self.regional_dict[team_rank]['state']
                 if host_conf != team_conf and host_state == team_state:
                     self.regional_dict[team_rank]['host'] = \
                         self.regional_dict[host_rank]['team']
                     break
 
     def set_seeds_by_surrounding_state_match(self, *seed_range):
-        for team_rank in range(*seed_range):
-            if self.host_already_set(team_rank):
-                continue
-            team_conf = self.regional_dict[team_rank]['conference']
-            team_state = self.regional_dict[team_rank]['state']
-            surr_states = surrounding_map[team_state]
-            for host_rank in range(1, 17):
-                host_conf = self.regional_dict[host_rank]['conference']
-                host_state = self.regional_dict[host_rank]['state']
+        for host_rank in range(1, 17):
+            host_conf = self.regional_dict[host_rank]['conference']
+            host_state = self.regional_dict[host_rank]['state']
+            for team_rank in range(*seed_range):
+                if self.host_already_assigned_team(host_rank, seed_range):
+                    break
+                if self.team_already_assigned_host(team_rank):
+                    continue
+                team_conf = self.regional_dict[team_rank]['conference']
+                team_state = self.regional_dict[team_rank]['state']
+                surr_states = surrounding_map[team_state]
                 if host_conf != team_conf and host_state in surr_states:
                     self.regional_dict[team_rank]['host'] = \
                         self.regional_dict[host_rank]['team']
                     break
 
+    def fill_remaining(self, *seed_range):
+        for host_rank in range(1, 17):
+            host_conf = self.regional_dict[host_rank]['conference']
+            for team_rank in range(*seed_range):
+                if self.host_already_assigned_team(host_rank, seed_range):
+                    break
+                if self.team_already_assigned_host(team_rank):
+                    continue
+                team_conf = self.regional_dict[team_rank]['conference']
+                if host_conf != team_conf:
+                    self.regional_dict[team_rank]['host'] = \
+                        self.regional_dict[host_rank]['team']
+                    break
+
     def print_field(self):
-        path = Path("2018_regional_dict_v1.txt")
+        path = Path("2018_regional_dict_v5.txt")
         with open(path, mode='wt') as f:
             f.writelines("Regionals:\n\n")
             for index in self.matchups:
