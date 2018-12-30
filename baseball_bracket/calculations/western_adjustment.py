@@ -1,4 +1,4 @@
-from baseball_bracket.data_collect.western_states import western_states
+from baseball_bracket.geography.western_states import western_states
 
 
 class WesternAdjustment:

@@ -89,6 +89,27 @@ class NolanRpiExpand:
             group2_wins = int(group2_record[0])
             group2_losses = int(group2_record[1])
 
+            g1_games = group1_wins + group1_lossess
+            g2_games = group2_wins + group2_losses
+            if g1_games == 0:
+                g1_pct = .5
+            else:
+                g1_pct = float(group1_wins / g1_games)
+            g1_g2_wins = group1_wins + group2_wins
+            g1_g2_games = g1_g2_wins + group1_lossess + group2_losses
+            if g1_g2_games == 0:
+                g1_g2_pct = .5
+            else:
+                g1_g2_pct = float(g1_g2_wins / g1_g2_games)
+
+            total_games = total_wins + total_losses + total_ties
+            if total_games == 0:
+                g1_pct_of_total = 0
+                g1_g2_pct_of_total = 0
+            else:
+                g1_pct_of_total = g1_games / total_games
+                g1_g2_pct_of_total = g1_games + g2_games / total_games
+
             self.nolan_dict[team_name] = {
                 'rpi_rank': rpi_rank,
                 'conference': conference,
@@ -115,6 +136,10 @@ class NolanRpiExpand:
                 'group1_losses': group1_lossess,
                 'group2_wins': group2_wins,
                 'group2_losses': group2_losses,
+                'g1_pct': g1_pct,
+                'g1_g2_pct': g1_g2_pct,
+                'g1_pct_of_total': g1_pct_of_total,
+                'g1_g2_pct_of_total': g1_g2_pct_of_total,
             }
 
     def get_nolan_dict(self):
