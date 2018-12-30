@@ -17,7 +17,7 @@ class TourneyRank:
         self.last_four_in = []
         self.first_four_out = []
         self.calc_field_of_64()
-
+        self.field_of_64 = self.create_field_name_list()
 
     def create_sortable_list(self):
         for key, value in self.team_dict.items():
@@ -45,6 +45,12 @@ class TourneyRank:
         self.first_four_out = self.qualifiers[64:68]
         self.last_four_in.reverse()
         self.field_of_64.sort(key=operator.itemgetter(1), reverse=True)
+
+    def create_field_name_list(self):
+        return [team[0] for team in self.field_of_64]
+
+    def return_field(self):
+        return self.field_of_64
 
     def print_field(self):
         path = Path("2018_ranks_v9.txt")
