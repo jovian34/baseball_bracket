@@ -9,6 +9,7 @@ from baseball_bracket.data_collect.get_auto_bids_wn import NolanAutoBid
 from baseball_bracket.conference.auto_bid import AutoBid
 from baseball_bracket.calculations.tourney_rank import TourneyRank
 from baseball_bracket.calculations.group_adjustment import GroupAdjustment
+from baseball_bracket.calculations.northern_adjustment import NorthernAdjustment
 
 
 def get_nolan_data():
@@ -60,18 +61,25 @@ def calculate_group_adjustments(team_dict):
     return group_adjust.return_team_dict()
 
 
+def calculate_northern_adjustment(team_dict, isr_dict):
+    north_adjust = NorthernAdjustment(team_dict, isr_dict)
+    return north_adjust.return_team_data()
+
+
 def main():
     team_dict = get_nolan_data()
-    print(f"Stanford Adjusted RPI: {team_dict['STANFORD']['adjusted_rpi']}")
+    print(f"Ohio State Adjusted RPI: {team_dict['OHIO STATE']['adjusted_rpi']}")
     isr_dict = get_boyd_data(team_dict)
     auto_bids = get_auto_bids()
     team_dict = calculate_conf_ranks(team_dict)
     team_dict = calculate_western_adjustment(isr_dict, team_dict)
-    print(f"After Western Adjustment: {team_dict['STANFORD']['adjusted_rpi']}")
+    print(f"After Western Adjustment: {team_dict['OHIO STATE']['adjusted_rpi']}")
     team_dict = calculate_conf_adjustment(team_dict)
-    print(f"After Conference Adjustment: {team_dict['STANFORD']['adjusted_rpi']}")
+    print(f"After Conference Adjustment: {team_dict['OHIO STATE']['adjusted_rpi']}")
     team_dict = calculate_group_adjustments(team_dict)
-    print(f"After Group Adjustment: {team_dict['STANFORD']['adjusted_rpi']}")
+    print(f"After Group Adjustment: {team_dict['OHIO STATE']['adjusted_rpi']}")
+    team_dict = calculate_northern_adjustment(team_dict, isr_dict)
+    print(f"After Group Adjustment: {team_dict['OHIO STATE']['adjusted_rpi']}")
     team_dict = set_auto_bids(auto_bids, team_dict)
     create_tourney_ranks(team_dict)
 
