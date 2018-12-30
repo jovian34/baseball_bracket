@@ -1,0 +1,130 @@
+Regionals:
+
+Region: 1
+Host: FLORIDA of the SEC
+3-seed: SOUTH FLORIDA of theAmerican Athletic
+3-seed: JACKSONVILLE of theAtlantic Sun
+3-seed: FAU of theConference USA
+4-seed: SAMFORD of theSouthern
+
+
+
+==============================
+Region: 16
+Host: COASTAL CAROLINA of the Sun Belt
+
+
+
+==============================
+Region: 8
+Host: OLE MISS of the SEC
+2-seed: SOUTHERN MISS of theConference USA
+
+
+
+==============================
+Region: 9
+Host: TEXAS TECH of the Big 12
+2-seed: HOUSTON of theAmerican Athletic
+3-seed: TEXAS A&M of theSEC
+3-seed: SAM HOUSTON STATE of theSouthland
+3-seed: DALLAS BAPTIST of theMissouri Valley
+3-seed: LSU of theSEC
+4-seed: NEW MEXICO STATE of theWestern Athletic
+4-seed: TEXAS SOUTHERN of theSWAC
+
+
+
+==============================
+Region: 2
+Host: STANFORD of the Pac-12
+2-seed: CAL STATE FULLERTON of theBig West
+3-seed: SAN DIEGO STATE of theMountain West
+
+
+
+==============================
+Region: 15
+Host: UCLA of the Pac-12
+
+
+
+==============================
+Region: 7
+Host: MINNESOTA of the Big Ten
+
+
+
+==============================
+Region: 10
+Host: CLEMSON of the ACC
+2-seed: SOUTH CAROLINA of theSEC
+
+
+
+==============================
+Region: 3
+Host: ARKANSAS of the SEC
+2-seed: MISSOURI STATE of theMissouri Valley
+3-seed: BAYLOR of theBig 12
+3-seed: OKLAHOMA STATE of theBig 12
+3-seed: OKLAHOMA of theBig 12
+4-seed: SAINT LOUIS of theAtlantic 10
+4-seed: ORAL ROBERTS of theThe Summit League
+4-seed: NORTHWESTERN STATE of theSouthland
+
+
+
+==============================
+Region: 14
+Host: FLORIDA STATE of the ACC
+
+
+
+==============================
+Region: 6
+Host: STETSON of the Atlantic Sun
+2-seed: AUBURN of theSEC
+
+
+
+==============================
+Region: 11
+Host: TEXAS of the Big 12
+
+
+
+==============================
+Region: 4
+Host: NORTH CAROLINA of the ACC
+2-seed: EAST CAROLINA of theAmerican Athletic
+4-seed: UNCW of theColonial Athletic
+4-seed: CAMPBELL of theBig South
+
+
+
+==============================
+Region: 13
+Host: GEORGIA of the SEC
+
+
+
+==============================
+Region: 5
+Host: OREGON STATE of the Pac-12
+4-seed: GONZAGA of theWest Coast
+
+
+
+==============================
+Region: 12
+Host: TENNESSEE TECH of the Ohio Valley
+2-seed: DUKE of theACC
+2-seed: VANDERBILT of theSEC
+2-seed: LOUISVILLE of theACC
+2-seed: MISSISSIPPI STATE of theSEC
+2-seed: NORTH CAROLINA STATE of theACC
+
+
+
+==============================

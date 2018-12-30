@@ -1,0 +1,123 @@
+Regionals:
+
+Region: 1
+Host: FLORIDA of the SEC
+4-seed: SAMFORD of the Southern
+
+
+
+==============================
+Region: 16
+Host: COASTAL CAROLINA of the Sun Belt
+2-seed: DUKE of the ACC
+2-seed: SOUTH CAROLINA of the SEC
+
+
+
+==============================
+Region: 8
+Host: OLE MISS of the SEC
+2-seed: SOUTHERN MISS of the Conference USA
+
+
+
+==============================
+Region: 9
+Host: TEXAS TECH of the Big 12
+3-seed: LSU of the SEC
+4-seed: ORAL ROBERTS of the The Summit League
+
+
+
+==============================
+Region: 2
+Host: STANFORD of the Pac-12
+
+
+
+==============================
+Region: 15
+Host: UCLA of the Pac-12
+2-seed: CAL STATE FULLERTON of the Big West
+3-seed: SAN DIEGO STATE of the Mountain West
+
+
+
+==============================
+Region: 7
+Host: MINNESOTA of the Big Ten
+
+
+
+==============================
+Region: 10
+Host: CLEMSON of the ACC
+4-seed: UNCW of the Colonial Athletic
+
+
+
+==============================
+Region: 3
+Host: ARKANSAS of the SEC
+2-seed: MISSOURI STATE of the Missouri Valley
+3-seed: BAYLOR of the Big 12
+4-seed: NORTHWESTERN STATE of the Southland
+
+
+
+==============================
+Region: 14
+Host: FLORIDA STATE of the ACC
+3-seed: SOUTH FLORIDA of the American Athletic
+
+
+
+==============================
+Region: 6
+Host: STETSON of the Atlantic Sun
+2-seed: AUBURN of the SEC
+
+
+
+==============================
+Region: 11
+Host: TEXAS of the Big 12
+2-seed: HOUSTON of the American Athletic
+3-seed: TEXAS A&M of the SEC
+4-seed: NEW MEXICO STATE of the Western Athletic
+4-seed: TEXAS SOUTHERN of the SWAC
+
+
+
+==============================
+Region: 4
+Host: NORTH CAROLINA of the ACC
+2-seed: EAST CAROLINA of the American Athletic
+4-seed: CAMPBELL of the Big South
+
+
+
+==============================
+Region: 13
+Host: GEORGIA of the SEC
+3-seed: JACKSONVILLE of the Atlantic Sun
+
+
+
+==============================
+Region: 5
+Host: OREGON STATE of the Pac-12
+4-seed: GONZAGA of the West Coast
+
+
+
+==============================
+Region: 12
+Host: TENNESSEE TECH of the Ohio Valley
+2-seed: VANDERBILT of the SEC
+2-seed: NORTH CAROLINA STATE of the ACC
+4-seed: SAINT LOUIS of the Atlantic 10
+
+
+
+==============================
