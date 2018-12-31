@@ -23,6 +23,13 @@ class Regionals:
 
     @staticmethod
     def calculate_seed(rank):
+        '''
+        for a 64-team fields with 16-regionals
+        assigns a 1-4 seed for each rank
+
+        :param rank: integer
+        :return: integer
+        '''
         if rank < 16:
             return 1
         elif rank < 32:
@@ -34,18 +41,41 @@ class Regionals:
 
     @staticmethod
     def is_a_host(rank, team):
+        '''
+        returns a team name if the team has a rank
+        worthy of a host site
+
+        :param rank: integer
+        :param team: string
+        :return: string or None
+        '''
         if rank < 16:
             return team
         else:
             return None
 
     def team_already_assigned_host(self, team_rank):
+        '''
+        A simple dictionary key call and subcall to determine
+        if the team has already been assigned to a host
+
+        :param team_rank:
+        :return: Boolean
+        '''
         if self.regional_dict[team_rank]['host']:
             return True
         else:
             return False
 
     def host_already_assigned_team(self, host_rank, seed_range):
+        '''
+        This loops over all 16 teams with the same seed to determine
+        if the host already has a team with that seed
+
+        :param host_rank: integer
+        :param seed_range: collection of integers
+        :return: Boolean
+        '''
         host = self.regional_dict[host_rank]['team']
         for i in range(*seed_range):
             if self.regional_dict[i]['host'] == host:
@@ -53,6 +83,13 @@ class Regionals:
         return False
 
     def create_regional_dict(self):
+        '''
+        This initializes the regional dictionary that is the main
+        data container for this class. Only the top-16
+        seeds are assigned a host at this point (themselves).
+
+        :return: None
+        '''
         for rank, team in enumerate(self.field):
             self.regional_dict[rank + 1] = {
                 'team': team,
@@ -64,6 +101,19 @@ class Regionals:
             }
 
     def set_seeds_by_in_state_match(self, *seed_range):
+        '''
+        this loops over the hosts via the range
+        function of host teams, and then the non-hosts
+        as determined by the param seed_range
+        4-seeds and 2-seeds are set to loop
+        backwards in order to assign the lesser
+        ranks to the higher ranked hosts
+        This function only assigns teams located in
+        the same state
+
+        :param seed_range: collection of integers
+        :return: None
+        '''
         for host_rank in range(1, 17):
             host_conf = self.regional_dict[host_rank]['conference']
             host_state = self.regional_dict[host_rank]['state']
@@ -79,6 +129,13 @@ class Regionals:
                     break
 
     def set_seeds_by_surrounding_state_match(self, *seed_range):
+        '''
+        Mostly the same as set_seeds_by_in_state_match
+        but uses surrounding states instead of same states
+
+        :param seed_range: collection of integers
+        :return: None
+        '''
         for host_rank in range(1, 17):
             host_conf = self.regional_dict[host_rank]['conference']
             host_state = self.regional_dict[host_rank]['state']
@@ -96,6 +153,14 @@ class Regionals:
                     break
 
     def fill_remaining(self, *seed_range):
+        '''
+        Mostly the same as set_seeds_by_in_state_match
+        but no geography test with the goal of assigning all of the
+        remaining teams to hosts
+
+        :param seed_range: collection of integers
+        :return: None
+        '''
         for host_rank in range(1, 17):
             host_conf = self.regional_dict[host_rank]['conference']
             for team_rank in range(*seed_range):
@@ -110,7 +175,17 @@ class Regionals:
                     break
 
     def print_field(self):
-        path = Path("2018_regional_dict_v5.txt")
+        '''
+        This method writes out a text file that
+        describes the field of 64.
+
+        It accesses the hosts via dictionary hash call directly,
+        but has to loop over each of the other 3 seeds to find
+        its match
+
+        :return: None
+        '''
+        path = Path("2018_regional_dict_v6.txt")
         with open(path, mode='wt') as f:
             f.writelines("Regionals:\n\n")
             for index in self.matchups:
