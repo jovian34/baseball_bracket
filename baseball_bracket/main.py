@@ -11,6 +11,7 @@ from baseball_bracket.calculations.tourney_rank import TourneyRank
 from baseball_bracket.calculations.group_adjustment import GroupAdjustment
 from baseball_bracket.calculations.northern_adjustment import NorthernAdjustment
 from baseball_bracket.calculations.regionals import Regionals
+import json
 
 
 def get_nolan_data():
@@ -72,6 +73,21 @@ def create_regions(field, isr_dict, team_dict):
     regionals.print_field()
 
 
+def export_team_dict(team_dict):
+    with open('team_dict_v1.json', 'w') as outfile:
+        json.dump(team_dict, outfile)
+
+
+def export_isr_dict(isr_dict):
+    with open('isr_dict_v1.json', 'w') as outfile:
+        json.dump(isr_dict, outfile)
+
+
+def export_auto_bids(auto_bids):
+    with open('auto_bids_v1.json', 'w') as outfile:
+        json.dump(auto_bids, outfile)
+
+
 def main():
     team_dict = get_nolan_data()
     isr_dict = get_boyd_data(team_dict)
@@ -82,6 +98,9 @@ def main():
     team_dict = calculate_group_adjustments(team_dict)
     team_dict = calculate_northern_adjustment(team_dict, isr_dict)
     team_dict = set_auto_bids(auto_bids, team_dict)
+    export_team_dict(team_dict)
+    export_isr_dict(isr_dict)
+    export_auto_bids(auto_bids)
     field = create_tourney_ranks(team_dict)
     create_regions(field, isr_dict, team_dict)
 
