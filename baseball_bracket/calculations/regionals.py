@@ -10,7 +10,13 @@ class Regionals:
         self.team_dict = team_dict
         self.regional_dict = {}
         self.create_regional_dict()
-        self.matchups = [1, 16, 8, 9, 2, 15, 7, 10, 3, 14, 6, 11, 4, 13, 5, 12]
+
+        # matchups give the Super Regional pairing orders
+        self.matchups = [1, 16, 8, 9, 4, 13, 5, 12, 3, 14, 6, 11, 7, 10, 2, 15]
+
+        self.assign_non_hosts_to_hosts()
+
+    def assign_non_hosts_to_hosts(self):
         self.set_seeds_by_in_state_match(64, 48, -1)  # 4-seeds
         self.set_seeds_by_in_state_match(33, 49)  # 3-seeds
         self.set_seeds_by_in_state_match(32, 16, -1)  # 2-seeds
