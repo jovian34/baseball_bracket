@@ -1,6 +1,12 @@
-# baseball_bracket
-NCAA Division I Baseball Tournament Bracket Modeler
-by Carl James
+# baseball_bracket v0.1
+## NCAA Division I Baseball Tournament Bracket Modeler
+### by Carl James
+
+#### v0.1 release only partially tested
+
+This app is written in Python 3.7.1, but should run on 
+Python 3.6.0 and later. Use of f-strings will prevent it from
+functioning unaltered on prior Python versions.
 
 This app web scrapes data from some college baseball ranking sites and
 processes the data in such a way as to attempt to emulate the
