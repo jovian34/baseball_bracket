@@ -28,6 +28,8 @@ Factors used in selecting/ranking/seeding the teams:
 - Boyd's World Iterative Strength Rating(ISR) for western teams
 - Regular Season Conference Championships
 - winning or losing record in own conference
+- record against the RPI top-50 and top-100 both win percentage
+and percentage of total games against these quality teams
 
 Factors in regional assignment
 - hosts are all the top-16 national seed
