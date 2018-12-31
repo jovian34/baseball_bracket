@@ -17,10 +17,10 @@ In the off-season the field generated is as if the field was re-established
 with the same criteria after the Men's College World Series(CWS). 
 For example
 even though Oregon State won the 2018 CWS title, this model only places
-the Beavers as the national #3 seed - largely because they were
+the Beavers as the national #5 seed - largely because they were
 not the Pac-12 champions. The #1 and #2 teams both got a boost due to winning
-there respective conference titles even though #2 Stanford didn't even win
-their own regional.
+their respective conference titles even though #2 Stanford didn't even win
+their own regional in the tournament.
 
 Factors used in selecting/ranking/seeding the teams:
 - automatic bids
