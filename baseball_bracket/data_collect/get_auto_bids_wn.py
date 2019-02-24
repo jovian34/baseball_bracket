@@ -4,7 +4,7 @@ from baseball_bracket.data_collect.req_soup_base import ReqSoup
 class NolanAutoBid:
 
     def __init__(self):
-        self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2018/autobids')
+        self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2019/autobids')
         self.soup = ReqSoup.text_from_request(self.req)
         self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
         self.break_into_sub_lists()

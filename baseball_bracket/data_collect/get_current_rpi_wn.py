@@ -5,7 +5,7 @@ class NolanRpiExpand:
 
 
     def __init__(self):
-        self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2018/rpi-live2')
+        self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2019/rpi-live2')
         self.soup = ReqSoup.text_from_request(self.req)
         self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
         self.remove_rpi_group()
