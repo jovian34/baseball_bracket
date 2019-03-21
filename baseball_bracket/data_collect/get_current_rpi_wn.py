@@ -7,11 +7,28 @@ class NolanRpiExpand:
     def __init__(self):
         self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2019/rpi-live2')
         self.soup = ReqSoup.text_from_request(self.req)
-        self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
+        self.td_text_delta = [td.text.strip() for td in self.soup.find_all('td') if td.text]
+        self.td_text = self.filter_td_text()
         self.remove_rpi_group()
         self.break_into_sub_lists()
         self.nolan_dict = {}
         self.create_nolan_dict()
+
+
+    def filter_td_text(self):
+        '''
+        the Warren Nolan site includes a delta number that not all teams have
+        that needs to be removed in parsing
+        :return: list of strings
+        '''
+        result = []
+        for value in self.td_text_delta:
+            if len(value) > 0:
+                if value[0] != '+':
+                    if value[0] != '-':
+                        result.append(value)
+        return result
+
 
 
     def remove_rpi_group(self):
@@ -38,15 +55,15 @@ class NolanRpiExpand:
         :param data: self
         :return: None
         '''
-        self.td_team_lists = [self.td_text_limited[x:x + 18]
-                              for x in range(0, len(self.td_text_limited), 18)]
+        self.td_team_lists = [self.td_text_limited[x:x + 17]
+                              for x in range(0, len(self.td_text_limited), 17)]
 
     def create_nolan_dict(self):
         self.nolan_dict = {}
         for team_list in self.td_team_lists:
             rpi_rank = int(team_list[0])
 
-            team_items = team_list[2].split('\n')
+            team_items = team_list[1].split('\n')
             team_name = team_items[0].strip().upper()
             conf_info = team_items[1].split(' (')
             conference = conf_info[0].strip()
@@ -59,7 +76,7 @@ class NolanRpiExpand:
             else:
                 conf_ties = 0
 
-            total_record = team_list[3].split('-')
+            total_record = team_list[2].split('-')
             total_wins = int(total_record[0])
             total_losses = int(total_record[1])
             if len(total_record) == 3:
@@ -67,11 +84,11 @@ class NolanRpiExpand:
             else:
                 total_ties = 0
 
-            rpi = float(team_list[5])
-            sos_rank = int(team_list[6])
-            sos = float(team_list[7])
+            rpi = float(team_list[4])
+            sos_rank = int(team_list[5])
+            sos = float(team_list[6])
 
-            nc_record = team_list[8].split('-')
+            nc_record = team_list[7].split('-')
             nc_wins = int(nc_record[0])
             nc_losses = int(nc_record[1])
             if len(nc_record) == 3:
@@ -79,13 +96,13 @@ class NolanRpiExpand:
             else:
                 nc_ties = 0
 
-            nc_rpi_rank = int(team_list[9])
-            nc_sos_rank = int(team_list[10])
+            nc_rpi_rank = int(team_list[8])
+            nc_sos_rank = int(team_list[3])
 
-            group1_record = team_list[14].split('-')
+            group1_record = team_list[13].split('-')
             group1_wins = int(group1_record[0])
             group1_lossess = int(group1_record[1])
-            group2_record = team_list[15].split('-')
+            group2_record = team_list[14].split('-')
             group2_wins = int(group2_record[0])
             group2_losses = int(group2_record[1])
 
