@@ -30,4 +30,8 @@ def find_inconsistent_names(rpi, isr):
     if len(bad_isr_names) == len(bad_rpi_names) == 0:
         return False
     else:
+        for name in bad_isr_names:
+            print(f"Bad ISR: {name}")
+        for name in bad_rpi_names:
+            print(f"Bad RPI: {name}")
         return True

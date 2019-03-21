@@ -25,7 +25,6 @@ class BoydsIsr:
 
     def insert_ca_baptist_data(self):
         ca_bapt_index = self.td_text.index('California Baptist')
-        print(ca_bapt_index)
         copy_td_text = self.td_text
         self.td_text = []
         for item in copy_td_text[0:ca_bapt_index + 1]:
@@ -41,7 +40,6 @@ class BoydsIsr:
 
     def create_boyd_dict(self):
         for team_list in self.td_team_lists:
-            print(team_list)
             isr_rank = int(team_list[0])
             team_name = team_list[1].strip().upper()
             state = team_list[2].strip().upper()

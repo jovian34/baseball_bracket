@@ -93,7 +93,7 @@ def main():
     isr_dict = get_boyd_data(team_dict)
     auto_bids = get_auto_bids()
     team_dict = calculate_conf_ranks(team_dict)
-    # team_dict = calculate_western_adjustment(isr_dict, team_dict)
+    team_dict = calculate_western_adjustment(isr_dict, team_dict)
     team_dict = calculate_conf_adjustment(team_dict)
     team_dict = calculate_group_adjustments(team_dict)
     team_dict = calculate_northern_adjustment(team_dict, isr_dict)
