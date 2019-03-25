@@ -7,12 +7,13 @@ class NolanAutoBid:
         self.req = ReqSoup.make_request('http://warrennolan.com/baseball/2019/autobids')
         self.soup = ReqSoup.text_from_request(self.req)
         self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
+        self.td_list_conf = []
         self.break_into_sub_lists()
         self.auto_bid_dict = {}
         self.create_auto_bid_dict()
 
     def break_into_sub_lists(self):
-        '''
+        """
         the Warren Nolan site is not parsing the table correctly
         when using the <tr> tag for rows. So I am taking
         all of the <td> items into a long list.
@@ -21,10 +22,10 @@ class NolanAutoBid:
         This could change in the future
         :param data:
         :return:
-        '''
-        self.td_list_conf = []
+        """
+
         for x in range(0, len(self.td_text), 4):
-            self.td_list_conf.append(self.td_text[x:x + 4])
+            self.td_list_conf.append(self.td_text[x:x + 3])
 
     def create_auto_bid_dict(self):
         for conf_list in self.td_list_conf:

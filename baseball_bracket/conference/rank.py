@@ -25,7 +25,10 @@ class ConferenceRank:
                            + (float(t_values['conf_ties']) / 2.0)
                     losses = float(t_values['conf_losses']) \
                              + float((t_values['conf_ties']) / 2.0)
-                    win_pct = float(wins / (wins + losses))
+                    try:
+                        win_pct = float(wins / (wins + losses))
+                    except ZeroDivisionError:
+                        win_pct = 0.5
                     self.team_dict[team]['conf_win_pct'] = win_pct
 
     def set_best_conf_win_pct(self):

@@ -5,6 +5,7 @@ from baseball_bracket.data_collect.name_difference import find_inconsistent_name
 from baseball_bracket.conference.rank import ConferenceRank
 from baseball_bracket.calculations.western_adjustment import WesternAdjustment
 from baseball_bracket.calculations.conference_adjustment import ConferenceAdjustment
+from baseball_bracket.data_collect.blank_auto_bids import blank_bids
 from baseball_bracket.data_collect.get_auto_bids_wn import NolanAutoBid
 from baseball_bracket.conference.auto_bid import AutoBid
 from baseball_bracket.calculations.tourney_rank import TourneyRank
@@ -44,8 +45,8 @@ def calculate_conf_adjustment(team_dict):
 
 
 def get_auto_bids():
-    auto_bids = NolanAutoBid()
-    return auto_bids.return_auto_bid_dict()
+    # auto_bids = NolanAutoBid()
+    return blank_bids
 
 
 def set_auto_bids(auto_bids, team_dict):
