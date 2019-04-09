@@ -1,0 +1,146 @@
+Regionals:
+
+Region: 1
+Host: OREGON STATE of the Pac-12
+2-seed: UC IRVINE of the Big West
+3-seed: SAN DIEGO of the West Coast
+4-seed: ARMY of the Patriot League
+
+
+
+==============================
+Region: 16
+Host: INDIANA STATE of the Missouri Valley
+2-seed: VANDERBILT of the SEC
+3-seed: INDIANA of the Big Ten
+4-seed: TOLEDO of the Mid-American
+
+
+
+==============================
+Region: 8
+Host: LOUISVILLE of the ACC
+2-seed: XAVIER of the Big East
+3-seed: BRYANT of the Northeast
+4-seed: MOREHEAD STATE of the Ohio Valley
+
+
+
+==============================
+Region: 9
+Host: ILLINOIS of the Big Ten
+2-seed: ILLINOIS STATE of the Missouri Valley
+3-seed: OLE MISS of the SEC
+4-seed: WESTERN ILLINOIS of the The Summit League
+
+
+
+==============================
+Region: 4
+Host: ARKANSAS of the SEC
+2-seed: WASHINGTON of the Pac-12
+3-seed: SAM HOUSTON STATE of the Southland
+4-seed: LOUISIANA TECH of the Conference USA
+
+
+
+==============================
+Region: 13
+Host: TENNESSEE of the SEC
+2-seed: NORTH CAROLINA STATE of the ACC
+3-seed: UNCG of the Southern
+4-seed: CAMPBELL of the Big South
+
+
+
+==============================
+Region: 5
+Host: UCLA of the Pac-12
+2-seed: WEST VIRGINIA of the Big 12
+3-seed: MISSISSIPPI STATE of the SEC
+4-seed: BINGHAMTON of the America East
+
+
+
+==============================
+Region: 12
+Host: TEXAS of the Big 12
+2-seed: CONNECTICUT of the American Athletic
+3-seed: TEXAS A&M of the SEC
+4-seed: TEXAS SOUTHERN of the SWAC
+
+
+
+==============================
+Region: 3
+Host: AUBURN of the SEC
+2-seed: SAINT JOHN'S of the Big East
+3-seed: GEORGIA SOUTHERN of the Sun Belt
+4-seed: QUINNIPIAC of the MAAC
+
+
+
+==============================
+Region: 14
+Host: OREGON of the Pac-12
+2-seed: GEORGIA of the SEC
+3-seed: GONZAGA of the West Coast
+4-seed: WRIGHT STATE of the Horizon League
+
+
+
+==============================
+Region: 6
+Host: COASTAL CAROLINA of the Sun Belt
+2-seed: CLEMSON of the ACC
+3-seed: NORTH CAROLINA of the ACC
+4-seed: NORTH CAROLINA A&T of the MEAC
+
+
+
+==============================
+Region: 11
+Host: TEXAS TECH of the Big 12
+2-seed: LSU of the SEC
+3-seed: PENN STATE of the Big Ten
+4-seed: VCU of the Atlantic 10
+
+
+
+==============================
+Region: 7
+Host: UC SANTA BARBARA of the Big West
+2-seed: NEBRASKA of the Big Ten
+3-seed: WILLIAM & MARY of the Colonial Athletic
+4-seed: AIR FORCE of the Mountain West
+
+
+
+==============================
+Region: 10
+Host: STANFORD of the Pac-12
+2-seed: PEPPERDINE of the West Coast
+3-seed: LOYOLA-MARYMOUNT of the West Coast
+4-seed: PENN of the Ivy League
+
+
+
+==============================
+Region: 2
+Host: ARIZONA STATE of the Pac-12
+2-seed: VIRGINIA TECH of the ACC
+3-seed: SAINT MARY'S COLLEGE of the West Coast
+4-seed: GRAND CANYON of the Western Athletic
+
+
+
+==============================
+Region: 15
+Host: UCF of the American Athletic
+2-seed: MIAMI (FL) of the ACC
+3-seed: FLORIDA of the SEC
+4-seed: JACKSONVILLE of the Atlantic Sun
+
+
+
+==============================
