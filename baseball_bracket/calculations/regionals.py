@@ -26,6 +26,8 @@ class Regionals:
         self.fill_remaining(64, 48, -1)  # 4-seeds
         self.fill_remaining(33, 49)  # 3-seeds
         self.fill_remaining(32, 16, -1)  # 2-seeds
+        self.check_for_empties()
+
 
     @staticmethod
     def calculate_seed(rank):
@@ -121,6 +123,8 @@ class Regionals:
         :return: None
         '''
         for host_rank in range(1, 17):
+            host_team = self.regional_dict[host_rank]['team']
+            lower_conf = self.get_lower_conf(host_team)
             host_conf = self.regional_dict[host_rank]['conference']
             host_state = self.regional_dict[host_rank]['state']
             for team_rank in range(*seed_range):
@@ -129,10 +133,26 @@ class Regionals:
                     break
                 team_conf = self.regional_dict[team_rank]['conference']
                 team_state = self.regional_dict[team_rank]['state']
+                if self.regional_dict[team_rank]['conference'] in lower_conf:
+                    continue
                 if host_conf != team_conf and host_state == team_state:
                     self.regional_dict[team_rank]['host'] = \
                         self.regional_dict[host_rank]['team']
                     break
+
+    def get_lower_conf(self, host):
+        '''
+        Determine what conferences have already been assigned to a host
+
+        :param host: str that is the name of the host assigned
+        :return: list of str conferences assigned as 2 through 4 to a host
+        '''
+        lower_conf = []
+        for team in range(17, 65):
+            if self.regional_dict[team]['host'] == host:
+                lower_conf.append(self.regional_dict[team]['conference'])
+
+        return lower_conf
 
     def set_seeds_by_surrounding_state_match(self, *seed_range):
         '''
@@ -143,6 +163,8 @@ class Regionals:
         :return: None
         '''
         for host_rank in range(1, 17):
+            host_team = self.regional_dict[host_rank]['team']
+            lower_conf = self.get_lower_conf(host_team)
             host_conf = self.regional_dict[host_rank]['conference']
             host_state = self.regional_dict[host_rank]['state']
             for team_rank in range(*seed_range):
@@ -153,6 +175,8 @@ class Regionals:
                 team_conf = self.regional_dict[team_rank]['conference']
                 team_state = self.regional_dict[team_rank]['state']
                 surr_states = surrounding_map[team_state]
+                if self.regional_dict[team_rank]['conference'] in lower_conf:
+                    continue
                 if host_conf != team_conf and host_state in surr_states:
                     self.regional_dict[team_rank]['host'] = \
                         self.regional_dict[host_rank]['team']
@@ -168,6 +192,8 @@ class Regionals:
         :return: None
         '''
         for host_rank in range(1, 17):
+            host_team = self.regional_dict[host_rank]['team']
+            lower_conf = self.get_lower_conf(host_team)
             host_conf = self.regional_dict[host_rank]['conference']
             for team_rank in range(*seed_range):
                 if self.host_already_assigned_team(host_rank, seed_range):
@@ -175,10 +201,30 @@ class Regionals:
                 if self.team_already_assigned_host(team_rank):
                     continue
                 team_conf = self.regional_dict[team_rank]['conference']
+                if self.regional_dict[team_rank]['conference'] in lower_conf:
+                    continue
                 if host_conf != team_conf:
                     self.regional_dict[team_rank]['host'] = \
                         self.regional_dict[host_rank]['team']
                     break
+
+    def check_for_empties(self):
+        '''
+        This is a print out of teams that couldn't be algorithmically assigned
+        with this program and will require manually changing the output txt
+        This list should be very small. Hope is to solve this with
+        further code in the future
+
+        :return: None
+        '''
+        for team in range(17, 65):
+            if not self.regional_dict[team]['host']:
+                print('======NOT ASSIGNED========')
+                print(self.regional_dict[team]['team'])
+                print(self.regional_dict[team]['conference'])
+                print(self.regional_dict[team]['seed'])
+                print(self.regional_dict[team]['state'])
+                print('======NOT ASSIGNED========')
 
     def print_field(self):
         '''
