@@ -11,11 +11,11 @@ class ConferenceAdjustment:
         for key, value in self.team_dict.items():
             if value['conf_win_pct'] <= 0.5:
                 # second lines are midseason adjustments top lines used in May
-                #self.team_dict[key]['adjusted_rpi'] += -0.015
-                self.team_dict[key]['adjusted_rpi'] += -0.0075
+                self.team_dict[key]['adjusted_rpi'] += -0.015
+                # self.team_dict[key]['adjusted_rpi'] += -0.0075
             if value['conf_champs']:
-                #self.team_dict[key]['adjusted_rpi'] += 0.018
-                self.team_dict[key]['adjusted_rpi'] += 0.009
+                self.team_dict[key]['adjusted_rpi'] += 0.018
+                # self.team_dict[key]['adjusted_rpi'] += 0.009
 
     def return_team_dict(self):
         return self.team_dict
