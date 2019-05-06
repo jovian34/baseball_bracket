@@ -19,7 +19,7 @@ class WesternAdjustment:
                     values['isr_rank'] < self.team_dict[team]['rpi_rank']:
                 if self.team_dict[team]['rpi_rank'] - values['isr_rank'] > 16:
                     self.team_dict[team]['adjusted_rpi'] = \
-                        self.rpi_rank_map[values['rpi_rank']-16] - 0.0001
+                        self.rpi_rank_map[self.team_dict[team]['rpi_rank']-16] - 0.0001
                 else:
                     self.team_dict[team]['adjusted_rpi'] = \
                         self.rpi_rank_map[values['isr_rank']] - 0.0001
