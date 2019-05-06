@@ -17,8 +17,12 @@ class WesternAdjustment:
         for team, values in self.isr_dict.items():
             if values['state'] in western_states and \
                     values['isr_rank'] < self.team_dict[team]['rpi_rank']:
-                self.team_dict[team]['adjusted_rpi'] = \
-                    self.rpi_rank_map[values['isr_rank']] - 0.0001
+                if self.team_dict[team]['rpi_rank'] - values['isr_rank'] > 16:
+                    self.team_dict[team]['adjusted_rpi'] = \
+                        self.rpi_rank_map[values['rpi_rank']-16] - 0.0001
+                else:
+                    self.team_dict[team]['adjusted_rpi'] = \
+                        self.rpi_rank_map[values['isr_rank']] - 0.0001
 
     def return_team_dict(self):
         return self.team_dict

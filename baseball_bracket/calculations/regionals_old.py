@@ -71,7 +71,7 @@ class Regionals:
                             continue
 
     def print_field(self):
-        path = Path("2019_regionals_w6.txt")
+        path = Path("2019_regionals_w12-2.txt")
         with open(path, mode='wt') as f:
             f.writelines("Regionals:\n")
             for region, teams in self.regions.items():
