@@ -9,8 +9,8 @@ class NolanAutoBid:
         self.td_text = [td.text.strip() for td in self.soup.find_all('td') if td.text]
         self.td_list_conf = []
         self.break_into_sub_lists()
-        self.auto_bid_dict = {}
-        self.create_auto_bid_dict()
+        self.auto_bid_dict = self.set_auto_bid_dict()
+        #self.create_auto_bid_dict()
 
     def break_into_sub_lists(self):
         """
@@ -26,6 +26,21 @@ class NolanAutoBid:
 
         for x in range(0, len(self.td_text), 4):
             self.td_list_conf.append(self.td_text[x:x + 3])
+
+    @staticmethod
+    def set_auto_bid_dict():
+        return {"ACC": null, "America East": null, "American Athletic": null,
+                "Atlantic 10": null, "Atlantic Sun": null, "Big 12": null,
+                "Big East": null, "Big South": null, "Big Ten": null,
+                "Big West": null, "Colonial Athletic": null,
+                "Conference USA": null, "Horizon League": null,
+                "Ivy League": null, "MAAC": null, "MEAC": null,
+                "Mid-American": null, "Missouri Valley": null,
+                "Mountain West": null, "Northeast": null, "Ohio Valley": null,
+                "Pac-12": null, "Patriot League": null, "SEC": null,
+                "Southern": null, "Southland": null, "Sun Belt": null,
+                "SWAC": null, "The Summit League": null, "West Coast": null,
+                "Western Athletic": null}
 
     def create_auto_bid_dict(self):
         for conf_list in self.td_list_conf:

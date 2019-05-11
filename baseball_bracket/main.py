@@ -5,8 +5,8 @@ from baseball_bracket.data_collect.name_difference import find_inconsistent_name
 from baseball_bracket.conference.rank import ConferenceRank
 from baseball_bracket.calculations.western_adjustment import WesternAdjustment
 from baseball_bracket.calculations.conference_adjustment import ConferenceAdjustment
-from baseball_bracket.data_collect.blank_auto_bids import blank_bids
-from baseball_bracket.data_collect.get_auto_bids_wn import NolanAutoBid
+from baseball_bracket.data_collect.clinched_auto_bids import clinched_auto_bids
+# from baseball_bracket.data_collect.get_auto_bids_wn import NolanAutoBid
 from baseball_bracket.conference.auto_bid import AutoBid
 from baseball_bracket.calculations.tourney_rank import TourneyRank
 from baseball_bracket.calculations.group_adjustment import GroupAdjustment
@@ -46,7 +46,7 @@ def calculate_conf_adjustment(team_dict):
 
 def get_auto_bids():
     # auto_bids = NolanAutoBid()
-    return blank_bids
+    return clinched_auto_bids
 
 
 def set_auto_bids(auto_bids, team_dict):
@@ -75,17 +75,17 @@ def create_regions(field, isr_dict, team_dict):
 
 
 def export_team_dict(team_dict):
-    with open('team_dict_w12-3.json', 'w') as outfile:
+    with open('team_dict_w13-2.json', 'w') as outfile:
         json.dump(team_dict, outfile)
 
 
 def export_isr_dict(isr_dict):
-    with open('isr_dict_w12-3.json', 'w') as outfile:
+    with open('isr_dict_w13-2.json', 'w') as outfile:
         json.dump(isr_dict, outfile)
 
 
 def export_auto_bids(auto_bids):
-    with open('auto_bids_w12-3.json', 'w') as outfile:
+    with open('auto_bids_w13-2.json', 'w') as outfile:
         json.dump(auto_bids, outfile)
 
 
