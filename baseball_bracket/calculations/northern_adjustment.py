@@ -11,7 +11,7 @@ class NorthernAdjustment:
     def increase_northern_rpi(self):
         for team, values in self.isr_data.items():
             if values['state'] in northern_states:
-                self.team_data[team]['adjusted_rpi'] += 0.0045
+                self.team_data[team]['adjusted_rpi'] += 0.003
                 # self.team_data[team]['adjusted_rpi'] += 0.0015
 
     def return_team_data(self):

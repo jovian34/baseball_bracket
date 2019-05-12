@@ -19,9 +19,9 @@ class ConferenceAdjustment:
                     self.team_dict[key]['adjusted_rpi'] += 0.018
                     # self.team_dict[key]['adjusted_rpi'] += 0.009
                 elif value['conference'] in next4:
-                    self.team_dict[key]['adjusted_rpi'] += 0.013
-                else:
                     self.team_dict[key]['adjusted_rpi'] += 0.009
+                else:
+                    self.team_dict[key]['adjusted_rpi'] += 0.006
 
     def return_team_dict(self):
         return self.team_dict
