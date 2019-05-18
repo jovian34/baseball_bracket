@@ -1,5 +1,5 @@
 power4 = ['SEC', 'Big 12', 'ACC', 'Pac-12', ]
-next4 = ['American Athletic', 'Big Ten', 'Missouri Valley', 'West Coast', ]
+next6 = ['American Athletic', 'Big Ten', 'Missouri Valley', 'Mountain West', 'West Coast', 'Sun Belt']
 
 
 class ConferenceAdjustment:
@@ -11,14 +11,14 @@ class ConferenceAdjustment:
     def adjust_rpi_for_conf_play(self):
         for key, value in self.team_dict.items():
             if value['conf_win_pct'] < 0.5:
-                # second lines are midseason adjustments top lines used in May
                 self.team_dict[key]['adjusted_rpi'] += -0.015
-                # self.team_dict[key]['adjusted_rpi'] += -0.0075
+            if value['conf_win_pct'] < 0.45:
+                self.team_dict[key]['adjusted_rpi'] += -0.015
+
             if value['conf_champs']:
                 if value['conference'] in power4:
                     self.team_dict[key]['adjusted_rpi'] += 0.018
-                    # self.team_dict[key]['adjusted_rpi'] += 0.009
-                elif value['conference'] in next4:
+                elif value['conference'] in next6:
                     self.team_dict[key]['adjusted_rpi'] += 0.009
                 else:
                     self.team_dict[key]['adjusted_rpi'] += 0.006
