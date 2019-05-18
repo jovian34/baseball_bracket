@@ -128,7 +128,7 @@ class Regionals:
             host_conf = self.regional_dict[host_rank]['conference']
             host_state = self.regional_dict[host_rank]['state']
             for team_rank in range(*seed_range):
-                print(f"{team_rank} for {seed_range}")
+                # print(f"{team_rank} for {seed_range}")
                 if self.host_already_assigned_team(host_rank, seed_range):
                     break
                 team_conf = self.regional_dict[team_rank]['conference']
@@ -237,7 +237,7 @@ class Regionals:
 
         :return: None
         '''
-        path = Path("2019_regional_dict_week13-2.txt")
+        path = Path("2019_regional_dict_week14-2.txt")
         with open(path, mode='wt') as f:
             f.writelines("Regionals:\n\n")
             for index in self.matchups:

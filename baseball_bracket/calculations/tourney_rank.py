@@ -53,7 +53,7 @@ class TourneyRank:
         return self.field_of_64
 
     def print_field(self):
-        path = Path("2019_ranks_w6.txt")
+        path = Path("2019_ranks_14-2.txt")
         with open(path, mode='wt') as f:
             f.writelines("Last Four in:\n")
             for rank, team in enumerate(self.last_four_in):
@@ -67,4 +67,4 @@ class TourneyRank:
 
             f.writelines("Ranked Field of 64:\n")
             for rank, team in enumerate(self.field_of_64):
-                f.writelines(f"{rank+1}. {team[0]}\n")
+                f.writelines(f"{rank+1}. {team}\n")

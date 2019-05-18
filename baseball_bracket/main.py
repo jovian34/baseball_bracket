@@ -56,6 +56,7 @@ def set_auto_bids(auto_bids, team_dict):
 
 def create_tourney_ranks(team_dict):
     tourney_rank = TourneyRank(team_dict)
+    tourney_rank.print_field()
     return tourney_rank.return_field()
 
 
@@ -75,18 +76,23 @@ def create_regions(field, isr_dict, team_dict):
 
 
 def export_team_dict(team_dict):
-    with open('team_dict_w13-2.json', 'w') as outfile:
+    with open('team_dict_w14-2.json', 'w') as outfile:
         json.dump(team_dict, outfile)
 
 
 def export_isr_dict(isr_dict):
-    with open('isr_dict_w13-2.json', 'w') as outfile:
+    with open('isr_dict_w14-2.json', 'w') as outfile:
         json.dump(isr_dict, outfile)
 
 
 def export_auto_bids(auto_bids):
-    with open('auto_bids_w13-2.json', 'w') as outfile:
+    with open('auto_bids_w14-2.json', 'w') as outfile:
         json.dump(auto_bids, outfile)
+
+
+def print_field_ranks(field):
+    for rank, team in enumerate(field):
+        print(f'{rank+1}) {team}')
 
 
 def main():
@@ -103,6 +109,7 @@ def main():
     export_isr_dict(isr_dict)
     export_auto_bids(auto_bids)
     field = create_tourney_ranks(team_dict)
+    print_field_ranks(field)
     create_regions(field, isr_dict, team_dict)
 
 
