@@ -19,10 +19,13 @@ class AutoBid:
 
     def set_auto_bids(self):
         for key, value in self.auto_bids.items():
+            print(key)
+            print(value)
             try:
                 self.team_dict[value]['auto_bid'] = True
             except KeyError:
                 team = self.get_highest_rpi_team_in_conf(key)
+                print(team)
                 self.team_dict[team]['auto_bid'] = True
 
     def return_team_dict(self):

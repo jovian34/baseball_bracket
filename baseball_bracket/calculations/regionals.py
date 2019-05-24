@@ -237,7 +237,7 @@ class Regionals:
 
         :return: None
         '''
-        path = Path("2019_regional_dict_week15-1.txt")
+        path = Path("2019_regional_dict_week15-5.txt")
         with open(path, mode='wt') as f:
             f.writelines("Regionals:\n\n")
             for index in self.matchups:

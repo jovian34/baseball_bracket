@@ -1,5 +1,6 @@
 power4 = ['SEC', 'Big 12', 'ACC', 'Pac-12', ]
-next6 = ['American Athletic', 'Big Ten', 'Missouri Valley', 'Mountain West', 'West Coast', 'Sun Belt']
+next3 = ['American Athletic', 'Big Ten', 'Missouri Valley']
+end10 = ['Mountain West', 'West Coast', 'Sun Belt']
 
 
 class ConferenceAdjustment:
@@ -18,10 +19,12 @@ class ConferenceAdjustment:
             if value['conf_champs']:
                 if value['conference'] in power4:
                     self.team_dict[key]['adjusted_rpi'] += 0.018
-                elif value['conference'] in next6:
+                elif value['conference'] in next3:
+                    self.team_dict[key]['adjusted_rpi'] += 0.012
+                elif value['conference'] in end10:
                     self.team_dict[key]['adjusted_rpi'] += 0.009
                 else:
-                    self.team_dict[key]['adjusted_rpi'] += 0.006
+                    self.team_dict[key]['adjusted_rpi'] += 0.005
 
     def return_team_dict(self):
         return self.team_dict
