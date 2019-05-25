@@ -26,6 +26,6 @@ clinched_auto_bids = {"ACC": None,
                       "Southland": None,
                       "Sun Belt": None,
                       "SWAC": 'SOUTHERN',
-                      "The Summit League": None,
+                      "The Summit League": 'OMAHA',
                       "West Coast": None,
                       "Western Athletic": None}
