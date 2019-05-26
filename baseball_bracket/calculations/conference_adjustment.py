@@ -20,17 +20,23 @@ class ConferenceAdjustment:
                 if value['conference'] in power4 and self.team_dict[key]['rpi_rank'] > 16:
                     self.team_dict[key]['adjusted_rpi'] += 0.018
                 elif value['conference'] in power4 and self.team_dict[key]['rpi_rank'] > 8:
-                    self.team_dict[key]['adjusted_rpi'] += 0.009
+                    self.team_dict[key]['adjusted_rpi'] += 0.003
+                elif value['conference'] in power4 and self.team_dict[key]['rpi_rank'] > 0:
+                    self.team_dict[key]['adjusted_rpi'] += 0.0005
 
                 elif value['conference'] in next3 and self.team_dict[key]['rpi_rank'] > 16:
                     self.team_dict[key]['adjusted_rpi'] += 0.013
                 elif value['conference'] in next3 and self.team_dict[key]['rpi_rank'] > 8:
-                    self.team_dict[key]['adjusted_rpi'] += 0.0075
+                    self.team_dict[key]['adjusted_rpi'] += 0.003
+                elif value['conference'] in next3 and self.team_dict[key]['rpi_rank'] > 0:
+                    self.team_dict[key]['adjusted_rpi'] += 0.0005
 
                 elif value['conference'] in end10 and self.team_dict[key]['rpi_rank'] > 16:
                     self.team_dict[key]['adjusted_rpi'] += 0.009
                 elif value['conference'] in end10 and self.team_dict[key]['rpi_rank'] > 8:
-                    self.team_dict[key]['adjusted_rpi'] += 0.0045
+                    self.team_dict[key]['adjusted_rpi'] += 0.003
+                elif value['conference'] in end10 and self.team_dict[key]['rpi_rank'] > 0:
+                    self.team_dict[key]['adjusted_rpi'] += 0.0005
 
                 else:
                     self.team_dict[key]['adjusted_rpi'] += 0.002

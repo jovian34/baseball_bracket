@@ -1,18 +1,18 @@
-clinched_auto_bids = {"ACC": None,
+clinched_auto_bids = {"ACC": 'NORTH CAROLINA',
                       "America East": 'STONY BROOK',
                       "American Athletic": 'CINCINNATI',  # leader only
                       "Atlantic 10": 'FORDHAM',
-                      "ASUN": 'LIBERTY',
-                      "Big 12": None,
+                      "ASUN": 'LIBERTY',  # leader only
+                      "Big 12": 'WEST VIRGINIA',  # leader only
                       "Big East": 'CREIGHTON',
                       "Big South": 'CAMPBELL',
-                      "Big Ten": None,
+                      "Big Ten": 'OHIO STATE',  # leader only
                       "Colonial Athletic": 'UNCW',
                       "Big West": 'UC SANTA BARBARA',
-                      "Conference USA": None,
+                      "Conference USA": 'SOUTHERN MISS',  # leader only
                       "Horizon League": 'UIC',
                       "Ivy League": 'HARVARD',
-                      "MAAC": 'QUINNIPIAC',  # leader only
+                      "MAAC": 'QUINNIPIAC',
                       "MEAC": 'FLORIDA A&M',
                       "Mid-American": 'CENTRAL MICHIGAN',
                       "Missouri Valley": 'INDIANA STATE',
@@ -21,14 +21,14 @@ clinched_auto_bids = {"ACC": None,
                       "Ohio Valley": 'JACKSONVILLE STATE',
                       "Pac-12": 'UCLA',
                       "Patriot League": 'ARMY',
-                      "SEC": None,
+                      "SEC": 'OLE MISS',  # leader only
                       "Southern": 'MERCER',  # leader only
                       "Southland": 'MCNEESE STATE',
-                      "Sun Belt": 'GEORGIA SOUTHERN',  # leader only
+                      "Sun Belt": 'COASTAL CAROLINA',  # leader only
                       "SWAC": 'SOUTHERN',
                       "The Summit League": 'OMAHA',
                       "West Coast": 'LOYOLA-MARYMOUNT',
-                      "Western Athletic": 'GRAND CANYON'  # leader only
+                      "Western Athletic": 'SACRAMENTO STATE'  # leader only
                     }
 
 
