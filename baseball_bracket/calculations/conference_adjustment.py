@@ -17,11 +17,9 @@ class ConferenceAdjustment:
 
             if value['conf_champs']:
                 if value['conference'] in top_10_RPI_conf and self.team_dict[key]['rpi_rank'] > 16:
-                    self.team_dict[key]['adjusted_rpi'] += 0.013
-                elif self.team_dict[key]['rpi_rank'] > 8:
+                    self.team_dict[key]['adjusted_rpi'] += 0.012
+                else:
                     self.team_dict[key]['adjusted_rpi'] += 0.003
-                elif self.team_dict[key]['rpi_rank'] > 0:
-                    self.team_dict[key]['adjusted_rpi'] += 0.0005
 
     def return_team_dict(self):
         return self.team_dict
