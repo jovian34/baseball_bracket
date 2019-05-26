@@ -76,17 +76,17 @@ def create_regions(field, isr_dict, team_dict):
 
 
 def export_team_dict(team_dict):
-    with open('team_dict_w15-7.json', 'w') as outfile:
+    with open('team_dict_w15-9.1.json', 'w') as outfile:
         json.dump(team_dict, outfile)
 
 
 def export_isr_dict(isr_dict):
-    with open('isr_dict_w15-7.json', 'w') as outfile:
+    with open('isr_dict_w15-9.1.json', 'w') as outfile:
         json.dump(isr_dict, outfile)
 
 
 def export_auto_bids(auto_bids):
-    with open('auto_bids_w15-7.json', 'w') as outfile:
+    with open('auto_bids_w15-9.1.json', 'w') as outfile:
         json.dump(auto_bids, outfile)
 
 

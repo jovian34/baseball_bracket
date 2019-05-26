@@ -13,18 +13,27 @@ class ConferenceAdjustment:
         for key, value in self.team_dict.items():
             if value['conf_win_pct'] < 0.5:
                 self.team_dict[key]['adjusted_rpi'] += -0.015
-            if value['conf_win_pct'] < 0.45:
+            if value['conf_win_pct'] < 0.451:
                 self.team_dict[key]['adjusted_rpi'] += -0.015
 
             if value['conf_champs']:
-                if value['conference'] in power4:
+                if value['conference'] in power4 and self.team_dict[key]['rpi_rank'] > 16:
                     self.team_dict[key]['adjusted_rpi'] += 0.018
-                elif value['conference'] in next3:
-                    self.team_dict[key]['adjusted_rpi'] += 0.012
-                elif value['conference'] in end10:
+                elif value['conference'] in power4 and self.team_dict[key]['rpi_rank'] > 8:
                     self.team_dict[key]['adjusted_rpi'] += 0.009
+
+                elif value['conference'] in next3 and self.team_dict[key]['rpi_rank'] > 16:
+                    self.team_dict[key]['adjusted_rpi'] += 0.013
+                elif value['conference'] in next3 and self.team_dict[key]['rpi_rank'] > 8:
+                    self.team_dict[key]['adjusted_rpi'] += 0.0075
+
+                elif value['conference'] in end10 and self.team_dict[key]['rpi_rank'] > 16:
+                    self.team_dict[key]['adjusted_rpi'] += 0.009
+                elif value['conference'] in end10 and self.team_dict[key]['rpi_rank'] > 8:
+                    self.team_dict[key]['adjusted_rpi'] += 0.0045
+
                 else:
-                    self.team_dict[key]['adjusted_rpi'] += 0.005
+                    self.team_dict[key]['adjusted_rpi'] += 0.002
 
     def return_team_dict(self):
         return self.team_dict

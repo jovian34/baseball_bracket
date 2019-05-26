@@ -1,31 +1,34 @@
 clinched_auto_bids = {"ACC": None,
                       "America East": 'STONY BROOK',
-                      "American Athletic": None,
+                      "American Athletic": 'CINCINNATI',  # leader only
                       "Atlantic 10": 'FORDHAM',
-                      "ASUN": None,
+                      "ASUN": 'LIBERTY',
                       "Big 12": None,
-                      "Big East": None,
+                      "Big East": 'CREIGHTON',
                       "Big South": 'CAMPBELL',
                       "Big Ten": None,
-                      "Colonial Athletic": None,
-                      "Big West": None,
+                      "Colonial Athletic": 'UNCW',
+                      "Big West": 'UC SANTA BARBARA',
                       "Conference USA": None,
                       "Horizon League": 'UIC',
                       "Ivy League": 'HARVARD',
-                      "MAAC": None,
+                      "MAAC": 'QUINNIPIAC',  # leader only
                       "MEAC": 'FLORIDA A&M',
-                      "Mid-American": None,
-                      "Missouri Valley": None,
-                      "Mountain West": None,
-                      "Northeast": None,
-                      "Ohio Valley": None,
-                      "Pac-12": None,
+                      "Mid-American": 'CENTRAL MICHIGAN',
+                      "Missouri Valley": 'INDIANA STATE',
+                      "Mountain West": 'FRESNO STATE',
+                      "Northeast": 'CENTRAL CONNECTICUT',
+                      "Ohio Valley": 'JACKSONVILLE STATE',
+                      "Pac-12": 'UCLA',
                       "Patriot League": 'ARMY',
                       "SEC": None,
-                      "Southern": None,
-                      "Southland": None,
-                      "Sun Belt": None,
+                      "Southern": 'MERCER',  # leader only
+                      "Southland": 'MCNEESE STATE',
+                      "Sun Belt": 'GEORGIA SOUTHERN',  # leader only
                       "SWAC": 'SOUTHERN',
                       "The Summit League": 'OMAHA',
-                      "West Coast": None,
-                      "Western Athletic": None}
+                      "West Coast": 'LOYOLA-MARYMOUNT',
+                      "Western Athletic": 'GRAND CANYON'  # leader only
+                    }
+
+
