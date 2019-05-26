@@ -1,15 +1,15 @@
 clinched_auto_bids = {"ACC": 'NORTH CAROLINA',
                       "America East": 'STONY BROOK',
-                      "American Athletic": 'CINCINNATI',  # leader only
+                      "American Athletic": 'CINCINNATI',
                       "Atlantic 10": 'FORDHAM',
-                      "ASUN": 'LIBERTY',  # leader only
-                      "Big 12": 'WEST VIRGINIA',  # leader only
+                      "ASUN": 'LIBERTY',
+                      "Big 12": 'OKLAHOMA STATE',
                       "Big East": 'CREIGHTON',
                       "Big South": 'CAMPBELL',
                       "Big Ten": 'OHIO STATE',  # leader only
                       "Colonial Athletic": 'UNCW',
                       "Big West": 'UC SANTA BARBARA',
-                      "Conference USA": 'SOUTHERN MISS',  # leader only
+                      "Conference USA": 'SOUTHERN MISS',
                       "Horizon League": 'UIC',
                       "Ivy League": 'HARVARD',
                       "MAAC": 'QUINNIPIAC',
@@ -22,9 +22,9 @@ clinched_auto_bids = {"ACC": 'NORTH CAROLINA',
                       "Pac-12": 'UCLA',
                       "Patriot League": 'ARMY',
                       "SEC": 'OLE MISS',  # leader only
-                      "Southern": 'MERCER',  # leader only
+                      "Southern": 'WOFFORD',  # leader only
                       "Southland": 'MCNEESE STATE',
-                      "Sun Belt": 'COASTAL CAROLINA',  # leader only
+                      "Sun Belt": 'COASTAL CAROLINA',
                       "SWAC": 'SOUTHERN',
                       "The Summit League": 'OMAHA',
                       "West Coast": 'LOYOLA-MARYMOUNT',
